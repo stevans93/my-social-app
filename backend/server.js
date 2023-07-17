@@ -1,9 +1,7 @@
 const express = require('express');
 const server = express();
 
-server.get('/', (req, res) => {
-    res.send('Hello')
-});
+server.use('/api', require('./routes'));
 
 server.listen(4000, () => {
     console.log('Server Port 4000');
