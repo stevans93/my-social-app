@@ -1,4 +1,20 @@
-GET http://localhost:4000/api/user/test
+### GET ALL USERS
+GET http://localhost:4000/api/user
 
 ###
-POST http://localhost:4000/api/user/test
+POST http://localhost:4000/api/user/add
+Content-Type: application/json
+
+{
+    "firstName": "Stevan",
+    "lastName": "Stevanovic"
+}
+
+###
+PUT http://localhost:4000/api/user/update/123
+Content-Type: application/json
+
+{
+    "firstName": "Stevan",
+    "lastName": "Stevanovic"
+}
