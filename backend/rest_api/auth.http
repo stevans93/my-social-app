@@ -1,0 +1,10 @@
+### REGISTER
+POST http://localhost:4000/api/auth/register
+Content-Type: application/json
+
+{
+  "firstName": "Stevan",
+  "lastName": "Stevanovic",
+  "email": "stevans93@gmail.com",
+  "password": "12345"
+}
