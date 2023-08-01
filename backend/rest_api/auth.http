@@ -3,8 +3,17 @@ POST http://localhost:4000/api/auth/register
 Content-Type: application/json
 
 {
-  "firstName": "Stevan",
-  "lastName": "Stevanovic",
-  "email": "stevans93@gmail.com",
+  "firstName": "Stevan2",
+  "lastName": "Stevanovic2",
+  "email": "stevans932@gmail.com",
+  "password": "12345"
+}
+
+### LOGIN
+POST http://localhost:4000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "stevans932@gmail.com",
   "password": "12345"
 }

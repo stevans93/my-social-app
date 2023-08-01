@@ -13,6 +13,7 @@ Content-Type: application/json
 ### UPDATE USER
 PUT http://localhost:4000/api/user/update/123
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGM3ZTczNzFlMzU4MWNhYzIzYWE4N2YiLCJmaXJzdE5hbWUiOiJTdGV2YW4yIiwibGFzdE5hbWUiOiJTdGV2YW5vdmljMiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjkwOTA4MTg4LCJleHAiOjE2OTA5OTQ1ODh9.bn8rgsF-REg5kwQiLNmPuDwIec5k_UZAvYr1GdQxsIA
 
 {
     "firstName": "Stevan",
