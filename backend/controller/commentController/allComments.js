@@ -6,7 +6,11 @@ const allComments = (req, res) => {
     let pipeline = [{$sort: {createdAt: -1}}];
 
     pipeline = [...pipeline, {
-        $match: {}
+        $match: {
+            $expr: {
+                $eq : ["$postId", {$toObjectId: postId}]
+            }
+        }
     }];
 
     CommentModel.aggregate([...pipeline])
@@ -16,7 +20,7 @@ const allComments = (req, res) => {
             res.send({count, comments});
         })
         .catch((error) => {
-            res.status(httpStatus.SERVICE_ERROR.status).send({error: error.message})
+            res.status(httpStatus.SERVICE_ERROR.status).send({error: error.message});
         });
 }
 

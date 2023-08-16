@@ -7,7 +7,7 @@ const verifyToken = (req, res, next) => {
     if(req.headers.hasOwnProperty("authorization")) {
         let token = req.headers.authorization;
 
-        jwt.verify(token, JWT_KEY, async (err, decode) => {
+        jwt.verify(token, JWT_KEY, async (error, decode) => {
             if(error) {
                 res.status(httpStatus.TOKEN_EXPIRES.status).send(httpStatus.TOKEN_EXPIRES.send)
             } else {

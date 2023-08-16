@@ -1,5 +1,19 @@
 ### GET ALL
-GET http://localhost:4000/api/comments/all
+GET http://localhost:4000/api/comments/all/644aedace62d6eb764d77784
 
 ### GET COMMENT BY ID
 GET http://localhost:4000/api/comments/644b7dabf66cb80c55317802
+
+### DELETE COMMENT
+DELETE http://localhost:4000/api/comments/644b7dabf66cb80c553177fc
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGM3ZTczNzFlMzU4MWNhYzIzYWE4N2YiLCJmaXJzdE5hbWUiOiJTdGV2YW4yIiwibGFzdE5hbWUiOiJTdGV2YW5vdmljMiIsInJvbGUiOiJhZG1pbiIsInRpbWUiOjE2OTE3NzQ5ODM5MTUsImlhdCI6MTY5MTc3NDk4MywiZXhwIjoxNjkxODYxMzgzfQ.85s9aa4X9JKJ0YNGE9aAtMSLSiBTeLWsRFERkZXhCFY
+
+### ADD COMMENT
+POST http://localhost:4000/api/comments/add
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGM3ZTczNzFlMzU4MWNhYzIzYWE4N2YiLCJmaXJzdE5hbWUiOiJTdGV2YW4yIiwibGFzdE5hbWUiOiJTdGV2YW5vdmljMiIsInJvbGUiOiJhZG1pbiIsInRpbWUiOjE2OTIxMzU2Nzc0NzcsImlhdCI6MTY5MjEzNTY3NywiZXhwIjoxNjkyMjIyMDc3fQ.-8vm_VPi69irlfII0_KYvz71oFrdphgq-8RK0yjZCS4
+{
+    "body": "Ovo je komentar. Stevan",
+    "postId": "644aedace62d6eb764d777b1"
+}
