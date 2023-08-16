@@ -2,15 +2,18 @@ const { Router } = require('express');
 const verifyToken = require('../midleweare/verifyToken');
 const router = new Router();
 
-/**** GET ****/
+/**** GET ALL USERS ****/
 router.get('/', require('../controller/userController/getAllUsers'));
 
-/**** POST ****/
+/**** GET USER ****/
+router.get('/:id', require('../controller/userController/getUser'));
+
+/**** POST A USER ****/
 router.post('/add', require('../controller/userController/addUser'));
 
-/**** PUT ****/
-router.put('/update/:id', verifyToken, require('../controller/userController/updateUser'));
+/**** UPDATE USER ****/
+router.put('/update', verifyToken, require('../controller/userController/updateUser'));
 
-/**** DELETE ****/
+/**** DELETE USER ****/
 
 module.exports = router;

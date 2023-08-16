@@ -15,7 +15,7 @@ const verifyToken = (req, res, next) => {
                     const user = await UserModel.findOne({_id: decode._id});
 
                     if(user) {
-                        req.locals = decode;
+                        req.locals = {...decode, _id: user._id};
                         next();
                     } else {
                         res.status(httpStatus.TOKEN_EXPIRES.status).send({msg: "Token is invalid!"});
