@@ -1,21 +1,22 @@
 module.exports = {
     joinPostUser: [
-        {$lookup: {
-            from: 'users',
-            localField: "userId",
-            foreignField: "_id",
-            as: "user",
-            pipeline: [
-                {
-                    $project: {
-                        firstName: 1,
-                        lastName: 1
-                    }
-                }
-            ]
-        }},
-        {$unwind:"$user"}
-    ],
+        {
+            $lookup: {
+                from: "users",
+                localField: "userId",
+                foreignField: "_id",
+                as: "user",
+                pipeline: [
+                    {
+                        $project: {
+                            firstName: 1,
+                            lastName: 1,
+                        },
+                    },
+                ],
+            },
+        },
+        {$unwind: "$user"}],
 
     /* POST COLLECTION JOIN */
     joinPostComment: [
@@ -26,9 +27,8 @@ module.exports = {
                 foreignField: "_id",
                 as: "post"
             }
-        }
-    ],
-
+        }],
+        
     joinCommentsPost: [
         {
             $lookup: {
@@ -76,7 +76,6 @@ module.exports = {
         // {$addFields: {"likeInfo.count": {$size: "$likeInfo.usersId"}}},
         {$project: {"likeInfo._id": 0, reactions: 0}},
     ],
-    
     joinSentMessageUser : [
         {
             $lookup: {
@@ -96,4 +95,5 @@ module.exports = {
 
         }
     ]
-}
+
+};

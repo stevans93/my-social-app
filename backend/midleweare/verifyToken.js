@@ -9,7 +9,7 @@ const verifyToken = (req, res, next) => {
 
         jwt.verify(token, JWT_KEY, async (error, decode) => {
             if(error) {
-                res.status(httpStatus.TOKEN_EXPIRES.status).send(httpStatus.TOKEN_EXPIRES.send)
+                res.status(httpStatus.TOKEN_EXPIRIES.status).send(httpStatus.TOKEN_EXPIRIES.send)
             } else {
                 try {
                     const user = await UserModel.findOne({_id: decode._id});
@@ -18,7 +18,7 @@ const verifyToken = (req, res, next) => {
                         req.locals = {...decode, _id: user._id};
                         next();
                     } else {
-                        res.status(httpStatus.TOKEN_EXPIRES.status).send({msg: "Token is invalid!"});
+                        res.status(httpStatus.TOKEN_EXPIRIES.status).send({msg: "Token is invalid!"});
                     }
                 } catch(error) {
                     res.status(httpStatus.SERVICE_ERROR.status).send(httpStatus.SERVICE_ERROR.send);
@@ -27,7 +27,7 @@ const verifyToken = (req, res, next) => {
             
         });
     } else {
-        res.status(httpStatus.TOKEN_EXPIRES.status).send({msg: "You are not logged!"});
+        res.status(httpStatus.TOKEN_EXPIRIES.status).send({msg: "You are not logged!"});
     }
 
     

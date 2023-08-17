@@ -1,2 +1,58 @@
 ### GET ALL POSTS
 GET http://localhost:4000/api/posts/all?page=2&limit=5&public=1
+
+### GET POST BY ID
+GET http://localhost:4000/api/posts/644aedace62d6eb764d77811
+
+### ADD POST
+POST http://localhost:4000/api/posts/add
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGM3ZTczNzFlMzU4MWNhYzIzYWE4N2YiLCJmaXJzdE5hbWUiOiJTdGV2YW5TIiwibGFzdE5hbWUiOiJTdGV2YW5vdmljUyIsInJvbGUiOiJhZG1pbiIsInRpbWUiOjE2OTIzMDg5MzY0NzMsImlhdCI6MTY5MjMwODkzNiwiZXhwIjoxNjkyMzk1MzM2fQ.U8nADeSPz9Kw7M84K4uCoS4ZJu8Ft53_y2JJxRv1kDI
+
+{
+    "body": "post body 6!!!",
+    "title": "Post title 6",
+    "userId": "64c7e7371e3581cac23aa87f",
+    "image": "Slika path 6",
+    "isPublic": true,
+    "tags": [
+        {
+        "name": "Tag 1"
+        },
+        {
+        "name": "Tag 2"
+        },
+        {
+        "name": "Tag 3"
+        }
+    ]
+}
+
+### UPDATE POST BY ID
+PUT http://localhost:4000/api/posts/update/64de95df2348118ef63f4fc5
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGM3ZTczNzFlMzU4MWNhYzIzYWE4N2YiLCJmaXJzdE5hbWUiOiJTdGV2YW5TIiwibGFzdE5hbWUiOiJTdGV2YW5vdmljUyIsInJvbGUiOiJhZG1pbiIsInRpbWUiOjE2OTIzMDg5MzY0NzMsImlhdCI6MTY5MjMwODkzNiwiZXhwIjoxNjkyMzk1MzM2fQ.U8nADeSPz9Kw7M84K4uCoS4ZJu8Ft53_y2JJxRv1kDI
+
+{
+    "body": "post body 67!!!",
+    "title": "Post title 6",
+    "userId": "64c7e7371e3581cac23aa87f",
+    "image": "Slika path 6",
+    "isPublic": true,
+    "tags": [
+        {
+        "name": "Tag 1"
+        },
+        {
+        "name": "Tag 2"
+        },
+        {
+        "name": "Tag 3"
+        }
+    ]
+}
+
+### DELETE POST BY ID
+DELETE http://localhost:4000/api/posts/64de95df2348118ef63f4fc5
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGM3ZTczNzFlMzU4MWNhYzIzYWE4N2YiLCJmaXJzdE5hbWUiOiJTdGV2YW5TIiwibGFzdE5hbWUiOiJTdGV2YW5vdmljUyIsInJvbGUiOiJhZG1pbiIsInRpbWUiOjE2OTIzMDg5MzY0NzMsImlhdCI6MTY5MjMwODkzNiwiZXhwIjoxNjkyMzk1MzM2fQ.U8nADeSPz9Kw7M84K4uCoS4ZJu8Ft53_y2JJxRv1kDI
