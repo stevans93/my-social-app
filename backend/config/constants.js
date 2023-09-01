@@ -14,7 +14,7 @@ module.exports = {
         },
         NOT_HAVE_PERMISSION: {
             status: 403,
-            send: {msg: "You dont have permission."}
+            send: {msg: "You don't have premission!"}
         },
         NOT_EXIST: {
             status: 415,

@@ -16,9 +16,21 @@ Content-Type: application/json
 ### UPDATE USER
 PUT http://localhost:4000/api/user/update
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGM3ZTczNzFlMzU4MWNhYzIzYWE4N2YiLCJmaXJzdE5hbWUiOiJTdGV2YW4yIiwibGFzdE5hbWUiOiJTdGV2YW5vdmljMiIsInJvbGUiOiJhZG1pbiIsInRpbWUiOjE2OTIyMDI5NTg0MzUsImlhdCI6MTY5MjIwMjk1OCwiZXhwIjoxNjkyMjg5MzU4fQ.bLkWPA7xthJBVKP8SLdAct20nJoteCIijUX6R0uW2nE
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGM3ZTczNzFlMzU4MWNhYzIzYWE4N2YiLCJmaXJzdE5hbWUiOiJTdGV2YW5TIiwibGFzdE5hbWUiOiJTdGV2YW5vdmljUyIsInJvbGUiOiJhZG1pbiIsInRpbWUiOjE2OTM0MzE4NTg0NjEsImlhdCI6MTY5MzQzMTg1OCwiZXhwIjoxNjkzNTE4MjU4fQ.-sWkZDAPt4DIMoEYVc0Rfdr0B9V2ZZLYyTA4ZHsutB4
 
 {
     "firstName": "StevanS",
     "lastName": "StevanovicS"
+}
+
+### UPDATE USER BY ID
+PUT http://localhost:4000/api/user/update/644a553656f68374bf7964a5
+Content-Type:application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGM3ZTczNzFlMzU4MWNhYzIzYWE4N2YiLCJmaXJzdE5hbWUiOiJTdGV2YW5TIiwibGFzdE5hbWUiOiJTdGV2YW5vdmljUyIsInJvbGUiOiJhZG1pbiIsInRpbWUiOjE2OTM1MTcyODYyODcsImlhdCI6MTY5MzUxNzI4NiwiZXhwIjoxNjkzNjAzNjg2fQ.6-ivscnWRQ1ZurQtfVbNZcq4yuirmT8QpsNlQWlL8RQ
+
+{
+    "firstName": "StevanS2",
+    "lastName": "StevanovicS2",
+    "gender": "male",
+    "role": "admin"
 }

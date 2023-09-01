@@ -13,6 +13,7 @@ router.post('/add', require('../controller/userController/addUser'));
 
 /**** UPDATE USER ****/
 router.put('/update', verifyToken, require('../controller/userController/updateUser'));
+router.put('/update/:userId', verifyToken, require('../controller/userController/updateUser'));
 
 /**** DELETE USER ****/
 
