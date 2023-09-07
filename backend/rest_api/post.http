@@ -4,6 +4,9 @@ GET http://localhost:4000/api/posts/all?page=2&limit=5&public=1
 ### GET POST BY ID
 GET http://localhost:4000/api/posts/644aedace62d6eb764d77811
 
+### SEARCH POST
+GET http://localhost:4000/api/posts/search?q=hello
+
 ### ADD POST
 POST http://localhost:4000/api/posts/add
 Content-Type: application/json
