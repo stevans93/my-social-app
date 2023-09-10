@@ -11,6 +11,9 @@ router.get("/:id", require("../controller/postController/getPost"));
 // Search Post
 router.get("/search", require("../controller/postController/searchPost"));
 
+// Filter Post
+router.get("/filter", require("../controller/postController/filterPost"));
+
 // Add Post
 router.post("/add", verifyToken, require("../controller/postController/addPost"));
 
