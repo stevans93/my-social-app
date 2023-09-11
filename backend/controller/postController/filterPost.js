@@ -10,6 +10,7 @@ const filterPost = (req, res) => {
         query = [{$match: {"tags.name": tags}}];
     } else {
         tags.forEach((tag) => {
+            // query.push({$match: {$expr: {$in: [tag, "$tags.name"]}}})
             query.push({$match: {"tags.name": tag}});
         });
     }
