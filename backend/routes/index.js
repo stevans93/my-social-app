@@ -8,5 +8,6 @@ router.use("/comments", require("./comments"));
 router.use("/likes", require("./likes"));
 router.use("/tags", require("./tags"));
 router.use("/ads", require("./ads"));
+router.use("/messages", require("./messages"));
 
 module.exports = router;

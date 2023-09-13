@@ -1,0 +1,10 @@
+### Get All Messages
+GET http://localhost:4000/api/messages
+
+### Send Messages
+POST http://localhost:4000/api/messages/addMessage/646e514e4611dc2bdddb7b7a
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGM3ZTczNzFlMzU4MWNhYzIzYWE4N2YiLCJmaXJzdE5hbWUiOiJTdGV2YW5TIiwibGFzdE5hbWUiOiJTdGV2YW5vdmljUyIsInJvbGUiOiJhZG1pbiIsInRpbWUiOjE2OTQ2NDE5NzUyNTMsImlhdCI6MTY5NDY0MTk3NSwiZXhwIjoxNjk0NzI4Mzc1fQ.ZRzcPNEr3kXGMkgr5j-Cmr6FP0RUFJzbb57EFsDyOcY
+{
+  "message": "Nova porukaa!!!"
+}
