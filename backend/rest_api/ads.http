@@ -4,13 +4,21 @@ GET http://localhost:4000/api/ads
 ### Add Ads
 POST http://localhost:4000/api/ads/add
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGM3ZTczNzFlMzU4MWNhYzIzYWE4N2YiLCJmaXJzdE5hbWUiOiJTdGV2YW5TIiwibGFzdE5hbWUiOiJTdGV2YW5vdmljUyIsInJvbGUiOiJhZG1pbiIsInRpbWUiOjE2OTQzNzI2NzUwMzEsImlhdCI6MTY5NDM3MjY3NSwiZXhwIjoxNjk0NDU5MDc1fQ.Qlu6vm3vAF_Bn1DoR55MwR3pDG8rbPY1cdbbHEQdCeg
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGM3ZTczNzFlMzU4MWNhYzIzYWE4N2YiLCJmaXJzdE5hbWUiOiJTdGV2YW5TIiwibGFzdE5hbWUiOiJTdGV2YW5vdmljUyIsInJvbGUiOiJhZG1pbiIsInRpbWUiOjE2OTU0MDY0ODA0NjIsImlhdCI6MTY5NTQwNjQ4MCwiZXhwIjoxNjk1NDkyODgwfQ.9TY51iIoYp45PZRxuFEP-6Hw7n6qJGxt5geAYDYKpyg
 {
-    "title": "Ad Title",
-    "body": "Ad Text",
+    "title": "Ad Title 2",
+    "body": "Ad Text 2",
     "image": "Image",
-    "startDate": "2023-06-07",
-    "endDate": "2023-06-12",
+    "startDate": "2023-09-22",
+    "endDate": "2023-10-12",
     "price": 500,
     "duration": 5
+}
+
+### Payment Init
+POST http://localhost:4000/api/ads/paymentInit
+Content-Type: application/json
+{
+    "price": "1678",
+    "currency": "usd"
 }
