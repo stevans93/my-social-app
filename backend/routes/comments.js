@@ -14,5 +14,8 @@ router.delete('/:id', verifyToken, require('../controller/commentController/dele
 // Add One Comment
 router.post('/add', verifyToken, require('../controller/commentController/addComment'));
 
+// Update Comment
+router.put('/update/:id', verifyToken, require('../controller/commentController/updateComment'));
+
 
 module.exports = router;

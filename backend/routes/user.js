@@ -16,5 +16,6 @@ router.put('/update', verifyToken, require('../controller/userController/updateU
 router.put('/update/:userId', verifyToken, require('../controller/userController/updateUser'));
 
 /**** DELETE USER ****/
+router.delete('/:id', verifyToken, require('../controller/userController/deleteUser'));
 
 module.exports = router;
