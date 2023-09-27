@@ -1,6 +1,6 @@
 {
-    "version": 2,
-    "name": "my-social-app-two",
+    "version": 1,
+    "name": "my-social-app",
     "builds": [
         {
             "src": "./server.js",
