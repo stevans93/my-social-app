@@ -1,7 +1,9 @@
-const { Router } = require("express");
+const { Router} = require("express")
 const verifyToken = require("../midleweare/verifyToken");
-const router = new Router();
+const addLike = require("../controller/likeController/addLike");
+const removeLike = require("../controller/likeController/removeLike");
+const router = new Router()
 
-router.post("/addRemove", verifyToken, require('../controller/likeController/addLike'), require('../controller/likeController/removeLike'));
+router.post("/addRemove/:postId", verifyToken, addLike, removeLike)
 
-module.exports = router;
+module.exports = router

@@ -6,7 +6,10 @@ const router = new Router();
 router.get("/all", require("../controller/postController/allPosts"));
 
 // Get One Post By Id
-router.get("/:id", require("../controller/postController/getPost"));
+// router.get("/:id", require("../controller/postController/getPost"));
+
+// Get User Posts
+router.get("/userPost/:userId", require("../controller/postController/userPost"));
 
 // Search Post
 router.get("/search", require("../controller/postController/searchPost"));
