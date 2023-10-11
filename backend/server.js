@@ -10,7 +10,7 @@ mongoose.connect(DB_URL)
     .then(()=>console.log("Connected to DB"))
     .catch((error) => console.log(error));
 
-server.use(express.json());
+server.use(express.json({ limit: '10mb'}));
 
 server.use('/api', require('./routes'));
 
