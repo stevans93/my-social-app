@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 import AppLayout from './AppLayout';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store/store';
 
 // Components and Pages
 import Home from './pages/Home/Home';
 import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
+import Posts from './pages/Posts/Posts';
+import Ads from './pages/Ads/Ads';
 
 const router = createBrowserRouter([
   {
@@ -24,16 +28,27 @@ const router = createBrowserRouter([
         element: <Register />
       },
       {
-        path: '/Login',
+        path: '/login',
         element: <Login />
-      }
+      },
+      {
+        path: '/posts',
+        element: <Posts />
+      },
+      {
+        path: '/ads',
+        element: <Ads />
+      },
     ]
   }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
