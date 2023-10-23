@@ -37,7 +37,7 @@ function Pagination() {
 
         return Array(numOfPages).fill(1).map((el, i) => {
             return(
-                <button className={`${page === el + i ? 'text-blue-600 font-bold' : null}`} name={el + i} onClick={handleCurrentPage} key={i}>{el + i}</button>
+                <button className={`${page === el + i ? 'text-blue-600 font-bold text-xl mb-1' : null}`} name={el + i} onClick={handleCurrentPage} key={i}>{el + i}</button>
             )
         })
     }
