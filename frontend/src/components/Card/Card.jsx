@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import moment from 'moment'
-import { AiFillLike } from 'react-icons/ai';
+import { AiFillLike, AiOutlineLike } from 'react-icons/ai';
 import { ImBin } from 'react-icons/im';
 import PostsService from '../../services/postsService';
 import { toast } from 'react-toastify';
@@ -9,6 +9,7 @@ import { likeSinglePost, removeSinglePost } from '../../store/postsSlice';
 
 function Card({post}) {
 
+  const [isActive, setIsActive] = useState(false);
   let user = JSON.parse(localStorage.getItem('sm_user'));
   const dispatch = useDispatch();
 
@@ -17,7 +18,9 @@ function Card({post}) {
       .then((res) => {
         dispatch(likeSinglePost());
       })
-      .catch((err) => console.log(err))
+      .catch((err) => console.log(err));
+
+      setIsActive(current => !current);
   }
 
   const handleRemovePost = () => {
@@ -59,10 +62,18 @@ function Card({post}) {
           <p>{post.body.substring(0, 30)}...</p>
 
           <div className='flex justify-between items-center'>
-            <div className='flex items-center gap-1 text-blue-600 text-[18px] cursor-pointer'>
-              <AiFillLike onClick={handleAddLike}/>
-              <span>{post.likeInfo?.users.length}</span>
+            
+            {post.likeInfo?.usersId.includes(user._id) ? (
+              <div className={ isActive ? `flex items-center gap-1 text-blue-600 text-[18px] cursor-pointer rise-shake` : `flex items-center gap-1 text-blue-600 text-[18px] cursor-pointer`}>
+                <AiFillLike onClick={handleAddLike}/>
+                <span>{post.likeInfo?.users.length}</span>
             </div>
+            ) : (
+              <div className={ isActive ? `flex items-center gap-1 text-[18px] cursor-pointer rise-shake` : `flex items-center gap-1 text-[18px] cursor-pointer`}>
+                <AiOutlineLike onClick={handleAddLike}/>
+                <span>{post.likeInfo?.users.length}</span>
+            </div>
+            )}
             
             {post.user._id === user._id ? (
               <div className='flex items-center gap-1 text-[18px] text-red-600 cursor-pointer'>

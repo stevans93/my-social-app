@@ -12,6 +12,8 @@ import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
 import Posts from './pages/Posts/Posts';
 import Ads from './pages/Ads/Ads';
+import AuthGuardianLogOut from './utils/AuthGuardianLogOut';
+import AuthGuardianLogIn from './utils/AuthGuardianLogIn';
 
 const router = createBrowserRouter([
   {
@@ -25,19 +27,19 @@ const router = createBrowserRouter([
       },
       {
         path: '/register',
-        element: <Register />
+        element: <AuthGuardianLogIn> <Register /> </AuthGuardianLogIn> 
       },
       {
         path: '/login',
-        element: <Login />
+        element: <AuthGuardianLogIn> <Login /> </AuthGuardianLogIn> 
       },
       {
         path: '/posts',
-        element: <Posts />
+        element: <AuthGuardianLogOut> <Posts /> </AuthGuardianLogOut>
       },
       {
         path: '/ads',
-        element: <Ads />
+        element: <AuthGuardianLogOut> <Ads /> </AuthGuardianLogOut>
       },
     ]
   }

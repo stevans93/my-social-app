@@ -47,7 +47,7 @@ function Register() {
                             if(user.status === 200) {
                                 toast.success('User registration successful...', {
                                     position: "top-right",
-                                    autoClose: 3000,
+                                    autoClose: 2000,
                                     hideProgressBar: false,
                                     closeOnClick: true,
                                     pauseOnHover: true,
@@ -61,7 +61,7 @@ function Register() {
                             } else {
                                 toast.warning('User already registered...', {
                                     position: "top-right",
-                                    autoClose: 3000,
+                                    autoClose: 2000,
                                     hideProgressBar: false,
                                     closeOnClick: true,
                                     pauseOnHover: true,
@@ -74,7 +74,7 @@ function Register() {
                         .catch((err) => {
                             toast.warning(err.response.data.msg, {
                                 position: "top-right",
-                                autoClose: 3000,
+                                autoClose: 2000,
                                 hideProgressBar: false,
                                 closeOnClick: true,
                                 pauseOnHover: true,

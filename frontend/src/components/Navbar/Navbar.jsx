@@ -3,6 +3,7 @@ import logo from '../../assets/pngegg1.png';
 import { NavLink, Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logOutUser } from '../../store/userSlice';
+import { toast } from 'react-toastify';
 
 function Navbar() {
 
@@ -13,6 +14,17 @@ function Navbar() {
   const handleLogOut = () => {
     dispatch(logOutUser());
     navigate('/login');
+
+    toast.success('User successfully logged out...', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   }
 
   return (

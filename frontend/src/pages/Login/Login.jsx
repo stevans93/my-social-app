@@ -29,7 +29,7 @@ function Login() {
           if(res.status === 200) {
             toast.success('User successfully logged in...', {
               position: "top-right",
-              autoClose: 3000,
+              autoClose: 2000,
               hideProgressBar: false,
               closeOnClick: true,
               pauseOnHover: true,
@@ -37,18 +37,17 @@ function Login() {
               progress: undefined,
               theme: "dark",
             });
-
-            localStorage.setItem('sm_token', res.data.token);
-            dispatch(loggedUser(res.data.user));
-
+            
             setTimeout(() => {
+              localStorage.setItem('sm_token', res.data.token);
+              dispatch(loggedUser(res.data.user));
               navigate('/');
             }, 3000)
             
           } else {
             toast.warning('User not logged in...', {
               position: "top-right",
-              autoClose: 3000,
+              autoClose: 2000,
               hideProgressBar: false,
               closeOnClick: true,
               pauseOnHover: true,
@@ -61,7 +60,7 @@ function Login() {
         .catch((err) => {
           toast.error(err.response.data.msg, {
             position: "top-right",
-            autoClose: 3000,
+            autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 class PostsService {
-	static allPosts = () => axios.get(`/posts/all`);
+	static allPosts = (page, limit) => axios.get(`/posts/all?page=${page}&limit=${limit}&public=0`);
 
     static addLike = (id) => axios.post(`/likes/addRemove/${id}`);
 
