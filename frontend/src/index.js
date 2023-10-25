@@ -14,6 +14,7 @@ import Posts from './pages/Posts/Posts';
 import Ads from './pages/Ads/Ads';
 import AuthGuardianLogOut from './utils/AuthGuardianLogOut';
 import AuthGuardianLogIn from './utils/AuthGuardianLogIn';
+import DetailPost from './pages/DetailPost/DetailPost';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
         path: '/ads',
         element: <AuthGuardianLogOut> <Ads /> </AuthGuardianLogOut>
       },
+      {
+        path: '/detailPost/:id',
+        element: <AuthGuardianLogOut> <DetailPost /> </AuthGuardianLogOut>
+      }
     ]
   }
 ]);

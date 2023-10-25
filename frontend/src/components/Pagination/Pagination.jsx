@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 
 function Pagination() {
-
     const {count} = useSelector(state => state.postsStore);
 
     const [searchParams, setSearchParams] = useSearchParams()
@@ -47,10 +46,10 @@ function Pagination() {
     }
 
   return (
-    <div className='flex w-full justify-center items-center my-6 gap-3'>
-        <AiOutlineArrowLeft className='mr-[5px] w-[30px] h-[30px] cursor-pointer' onClick={handlePreviousPage} />
+    <div className='flex w-[60%] mx-auto justify-center items-center mt-10 py-2 gap-3 border border-primary rounded-lg shadow bg-secondary'>
+        <AiOutlineArrowLeft className='mr-[5px] w-[30px] h-[30px] cursor-pointer hover:text-blue-600' onClick={handlePreviousPage} />
         {pageOfPagination()}
-        <AiOutlineArrowRight className='mr-[5px] w-[30px] h-[30px] cursor-pointer' onClick={handleNextPage} />
+        <AiOutlineArrowRight className='mr-[5px] w-[30px] h-[30px] cursor-pointer hover:text-blue-600' onClick={handleNextPage} />
     </div>
   )
 }

@@ -6,6 +6,8 @@ import PostsService from '../../services/postsService';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { likeSinglePost, removeSinglePost } from '../../store/postsSlice';
+import { MdOutlineVisibility } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 function Card({post}) {
 
@@ -49,6 +51,9 @@ function Card({post}) {
           <img src={post.image} alt="card-img" className='h-[150px] w-full object-cover' />
           <h3 className='absolute top-2 left-2'>{post.user.firstName} {post.user.lastName}</h3>
           <p className='absolute top-8 left-2'>{moment(post.createdAt).format('dddd,Ah')}</p>
+          <Link to={`/detailPost/${post._id}`}>
+            <MdOutlineVisibility className='absolute top-1 right-2 text-2xl cursor-pointer' />
+          </Link>
         </div>
 
         <div className='p-[7px] grow flex flex-col gap-3'>
@@ -66,12 +71,12 @@ function Card({post}) {
             {post.likeInfo?.usersId.includes(user._id) ? (
               <div className={ isActive ? `flex items-center gap-1 text-blue-600 text-[18px] cursor-pointer rise-shake` : `flex items-center gap-1 text-blue-600 text-[18px] cursor-pointer`}>
                 <AiFillLike onClick={handleAddLike}/>
-                <span>{post.likeInfo?.users.length}</span>
+                <span>{post.likeInfo?.users.length > 0 ? post.likeInfo?.users.length : 0}</span>
             </div>
             ) : (
               <div className={ isActive ? `flex items-center gap-1 text-[18px] cursor-pointer rise-shake` : `flex items-center gap-1 text-[18px] cursor-pointer`}>
                 <AiOutlineLike onClick={handleAddLike}/>
-                <span>{post.likeInfo?.users.length}</span>
+                <span>{post.likeInfo?.users.length > 0 ? post.likeInfo?.users.length : 0}</span>
             </div>
             )}
             

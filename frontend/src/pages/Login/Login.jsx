@@ -86,10 +86,10 @@ function Login() {
   return (
     <div>
       <form onSubmit={formik.handleSubmit} className='w-[70%] p-[20px] border border-primary rounded-lg mx-auto mt-7 flex flex-col bg-secondary shadow gap-2'>
-        <label>Email: {' '} <span className='text-red-600 italic'>{showError('email')}</span> </label>
+        <label className='text-[15px]'>Email: {' '} <span className='text-red-600 italic'>{showError('email')}</span> </label>
         <input value={formik.values.email} onChange={formik.handleChange} type='email' name='email' placeholder='Insert Email...' className='bg-secondary border p-[7px] rounded-md'/>
 
-        <label>Password: {' '} <span className='text-red-600 italic'>{showError('password')}</span> </label>
+        <label className='text-[15px]'>Password: {' '} <span className='text-red-600 italic'>{showError('password')}</span> </label>
         <div className='relative flex flex-col'>
           <input value={formik.values.password} onChange={formik.handleChange} type={`${isVisible ? 'password' : 'text'}`} name='password' placeholder='Insert Password...' className='bg-secondary border p-[7px] rounded-md'/>
           {isVisible ? (

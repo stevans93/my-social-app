@@ -5,7 +5,11 @@ class PostsService {
 
     static addLike = (id) => axios.post(`/likes/addRemove/${id}`);
 
-    static removePost = (id) => axios.delete(`/posts/${id}`);
+    static removePost = (id) => axios.delete(`/posts/singlePost/${id}`);
+
+    static createNewPost = (body) => axios.post('/posts/add', body);
+
+    static getSinglePost = (id) => axios.get(`/posts/${id}`);
 }
 
 export default PostsService;
