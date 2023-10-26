@@ -136,7 +136,7 @@ function Register() {
             <label className='text-[15px]'>Birthdate: {' '} <span className='text-red-600 italic'>{showError('birthDate')}</span> </label>
             <input value={formik.values.birthDate} onChange={formik.handleChange} type="date" name='birthDate' className='bg-secondary border p-[7px] text-[#9CA3AF] rounded-md'/>
 
-            <button type='submit' className='bg-primary p-[10px] mt-[20px] rounded-lg'>Register</button>
+            <button type='submit' className='bg-primary p-[10px] mt-[20px] rounded-lg cursor-pointer'>Register</button>
         </form>
     </div>
   )

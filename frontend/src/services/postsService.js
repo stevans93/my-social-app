@@ -10,6 +10,8 @@ class PostsService {
     static createNewPost = (body) => axios.post('/posts/add', body);
 
     static getSinglePost = (id) => axios.get(`/posts/${id}`);
+
+    static searchPosts = (title) => axios.get(`/posts/search?q=${title}`);
 }
 
 export default PostsService;

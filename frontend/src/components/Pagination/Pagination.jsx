@@ -3,20 +3,21 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 
-function Pagination() {
+function Pagination({page, limit, searchTitle}) {
     const {count} = useSelector(state => state.postsStore);
 
     const [searchParams, setSearchParams] = useSearchParams()
-
-    let page = searchParams.get('page') ? parseInt(searchParams.get('page')) : 1;
-    let limit = searchParams.get('limit') ? parseInt(searchParams.get('limit')) : 6;
 
     useEffect(() => {
         handleSearchParams(page);
     }, [searchParams]);
 
     const handleSearchParams = (page) => {
-        setSearchParams({page, limit});
+        if(!searchTitle) {
+            setSearchParams({page, limit});
+        } else {
+            setSearchParams({page, limit, search: searchTitle});
+        }
     };
 
     const handleNextPage = () => {

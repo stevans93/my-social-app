@@ -100,7 +100,7 @@ function Login() {
         }
         </div>
         
-        <button type='submit' className='bg-primary p-[10px] mt-[20px] rounded-lg'>Login</button>
+        <button type='submit' className='bg-primary p-[10px] mt-[20px] rounded-lg cursor-pointer'>Login</button>
       </form>
     </div>
   )

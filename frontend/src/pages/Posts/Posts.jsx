@@ -16,21 +16,33 @@ function Posts() {
 	const dispatch = useDispatch();
 	const { posts, removePost, likedPost, createNewPost } = useSelector((state) => state.postsStore);
 
+  let page = searchParams.get('page') ? parseInt(searchParams.get('page')) : 1;
+  let limit = searchParams.get('limit') ? parseInt(searchParams.get('limit')) : 6;
+  let searchTitle = searchParams.get('search') ? searchParams.get('search') : null;
+
 	useEffect(() => {
     
     setIsLoading(true);
-    let page = searchParams.get('page') ? searchParams.get('page') : 1;
-    let limit = searchParams.get('limit') ? searchParams.get('limit') : 6;
 
-		PostsService.allPosts(page, limit).then((res) => {
-			dispatch(storeAllPosts(res.data));
-      setIsLoading(false);
-		});
+    if(searchTitle) {
+      PostsService.searchPosts(searchTitle)
+        .then((res) => {
+          dispatch(storeAllPosts(res.data));
+          setIsLoading(false);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+    } else {
+      PostsService.allPosts(page, limit).then((res) => {
+        dispatch(storeAllPosts(res.data));
+        setIsLoading(false);
+      });
+    }
+    
 	}, [removePost, searchParams, createNewPost]);
 
   useEffect(() => {
-    let page = searchParams.get('page') ? searchParams.get('page') : 1;
-    let limit = searchParams.get('limit') ? searchParams.get('limit') : 6;
 
 		PostsService.allPosts(page, limit).then((res) => {
 			dispatch(storeAllPosts(res.data));
@@ -50,7 +62,7 @@ function Posts() {
                         return <Card key={post._id} post={post} />;
                     })}
                 </div>
-                <Pagination />
+                <Pagination page={page} limit={limit} searchTitle={searchTitle}/>
               </>
             )}
         </div>
